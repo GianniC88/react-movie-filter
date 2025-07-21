@@ -15,7 +15,11 @@ function App() {
   const [filteredMovies, setFilteredMovies] = useState(listMovies);
 
   useEffect(() => {
-    console.log("i amrunning no");
+    console.log("i am running on");
+    const filtered = listMovies.filter((movie) =>
+      movie.title.toLowerCase().includes(searchMovie.toLowerCase())
+    );
+    setFilteredMovies(filtered);
   }, [searchMovie]);
 
   return (
