@@ -1,4 +1,3 @@
-import { use } from "react";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -12,12 +11,12 @@ function App() {
   ];
   console.log(listMovies);
 
-  const [search, setSearch] = useState("");
+  const [searchMovie, setSearchMovie] = useState("");
   const [filteredMovies, setFilteredMovies] = useState(listMovies);
 
   useEffect(() => {
     console.log("i amrunning no");
-  }, [search]);
+  }, [searchMovie]);
 
   return (
     <>
@@ -37,15 +36,15 @@ function App() {
                       className="form-control"
                       type="search"
                       placeholder="Cerca film..."
-                      value={search}
-                      onChange={(e) => setSearch(e.target.value)}
+                      value={searchMovie}
+                      onChange={(e) => setSearchMovie(e.target.value)}
                     />
                     <button className="btn btn-outline-success" type="submit">
                       Search
                     </button>
                   </form>
                   <ul className="list-group list-group-flush p-3">
-                    {listMovies.map((movie, index) => (
+                    {filteredMovies.map((movie, index) => (
                       <li key={index} className="list-group-item">
                         <strong>{movie.title}</strong> -{" "}
                         <span className="text-muted">{movie.genre}</span>
