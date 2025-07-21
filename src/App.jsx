@@ -35,7 +35,7 @@ function App() {
             <div className="card">
               <div className="card-body">
                 <div className="row">
-                  <form class="d-flex" role="search">
+                  <form className="d-flex" role="search">
                     <input
                       className="form-control"
                       type="search"
