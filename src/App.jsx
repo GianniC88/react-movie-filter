@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     console.log("i am running on");
     const filtered = listMovies.filter((movie) =>
-      movie.title.toLowerCase().includes(searchMovie.toLowerCase())
+      movie.title.includes(searchMovie)
     );
     setFilteredMovies(filtered);
   }, [searchMovie]);
